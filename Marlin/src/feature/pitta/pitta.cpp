@@ -3154,6 +3154,7 @@ void PITTA::physical_processing() {
       temp_temp_bed = pitta_get_temp_bed();
       pitta_set_temp_bed(40);
       SERIAL_ECHOLNPGM("safety bed temp: ", 40);
+      ui.status_printf(0, F("No fillament!"));
       diplay_update_cnt = 990;
       // SET_INPUT_PULLUP(ONE_W_CMD_PIN);
       SET_INPUT_PULLDOWN(ONE_W_CMD_PIN);

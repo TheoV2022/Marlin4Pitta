@@ -715,12 +715,14 @@ void Draw_Print_ProgressElapsed() {
   char buf[10];
   duration_t elapsed = print_job_timer.duration(); // print timer
   sprintf_P(buf, PSTR("%02i:%02i"), (uint16_t)(elapsed.value / 3600), ((uint16_t)elapsed.value % 3600) / 60);
+  DWIN_Draw_Rectangle(1, HMI_data.Background_Color, 47, 192, 87, 208);
   DWINUI::Draw_String(HMI_data.Text_Color, HMI_data.Background_Color, 47, 192, buf);
 }
 
 void Draw_Print_ProgressRemain() {
   char buf[10];
   sprintf_P(buf, PSTR("%02i:%02i"), (uint16_t)(_remain_time / 3600), ((uint16_t)_remain_time % 3600) / 60);
+  DWIN_Draw_Rectangle(1, HMI_data.Background_Color, 181, 192, 221, 208);
   DWINUI::Draw_String(HMI_data.Text_Color, HMI_data.Background_Color, 181, 192, buf);
 }
 
